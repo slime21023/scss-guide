@@ -43,14 +43,18 @@ hyde_sticky = true
 hyde_reverse = false
 hyde_theme = "theme-gradient-sunset"
 
+# Hydoc 主題特定設定
+hydoc_enable_code_copy = true
+hydoc_educational_colors = true
+
 # Hyde 側邊欄連結
 hyde_links = [
-    {url = "/basics/", name = "基礎語法"},
-    {url = "/organization/", name = "項目組織"},
-    {url = "/advanced/", name = "進階功能"},
-    {url = "/patterns/", name = "設計模式"},
-    {url = "/best-practices/", name = "最佳實踐"},
-    {url = "/examples/", name = "實際範例"},
+    {url = "basics/", name = "基礎語法"},
+    {url = "organization/", name = "項目組織"},
+    {url = "advanced/", name = "進階功能"},
+    {url = "patterns/", name = "設計模式"},
+    {url = "best-practices/", name = "最佳實踐"},
+    {url = "examples/", name = "實際範例"},
 ]
 
 # SEO 設定

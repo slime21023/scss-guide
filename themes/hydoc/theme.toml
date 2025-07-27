@@ -1,0 +1,27 @@
+name = "hydoc"
+description = "Educational documentation theme based on Hyde"
+license = "MIT"
+homepage = "https://github.com/getzola/hyde"
+min_version = "0.11.0"
+demo = ""
+
+[extra]
+# Hyde inherited settings
+hyde_sticky = true
+hyde_reverse = false
+hyde_theme = "theme-base-08"
+hyde_links = [
+]
+
+# Hydoc specific settings
+hydoc_enable_code_copy = true
+hydoc_educational_colors = true
+
+[author]
+name = "Vincent Prouillet"
+homepage = "https://www.vincentprouillet.com"
+
+[original]
+author =  "mdo"
+homepage = "http://markdotto.com/"
+repo = "https://www.github.com/mdo/hyde"

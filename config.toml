@@ -1,0 +1,67 @@
+# Zola 配置文件
+base_url = "https://scss-guide.example.com"
+title = "SCSS 使用指南"
+description = "詳盡的 SCSS 學習指南，從基礎到進階的完整教程"
+theme = "hydoc"
+
+# 語言設定
+default_language = "zh-tw"
+
+# 編譯設定
+compile_sass = true
+minify_html = true
+generate_feeds = false
+
+# 搜索設定
+build_search_index = false
+
+# 分類法設定
+taxonomies = [
+    {name = "tags", feed = true},
+    {name = "categories", feed = true}
+]
+
+# Markdown 設定
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+render_emoji = true
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = true
+
+# 額外設定
+[extra]
+# 網站資訊
+author = "SCSS Guide Team"
+github_url = "https://github.com/example/scss-guide"
+feed_filename = "atom.xml"
+
+# Hyde 主題設定
+hyde_sticky = true
+hyde_reverse = false
+hyde_theme = "theme-gradient-sunset"
+
+# Hyde 側邊欄連結
+hyde_links = [
+    {url = "/basics/", name = "基礎語法"},
+    {url = "/organization/", name = "項目組織"},
+    {url = "/advanced/", name = "進階功能"},
+    {url = "/patterns/", name = "設計模式"},
+    {url = "/best-practices/", name = "最佳實踐"},
+    {url = "/examples/", name = "實際範例"},
+]
+
+# SEO 設定
+[extra.seo]
+keywords = ["SCSS", "Sass", "CSS", "前端開發", "樣式表", "教程"]
+google_analytics = ""
+google_site_verification = ""
+
+# 主題設定
+[extra.theme]
+color_scheme = "auto"
+sidebar_sticky = true
+show_reading_time = true
+show_word_count = true

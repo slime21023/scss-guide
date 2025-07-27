@@ -1,0 +1,424 @@
+/*
+ * Hydoc Theme
+ * 
+ * Educational documentation theme based on Hyde
+ * Designed for technical education and documentation
+ * 
+ * Based on Hyde theme by @mdo
+ * Original Hyde: https://github.com/poole/hyde
+ * 
+ * Enhanced for educational content presentation
+ */
+
+
+/*
+ * Contents
+ *
+ * Global resets
+ * Sidebar
+ * Container
+ * Reverse layout
+ * Themes
+ */
+
+
+/*
+ * Global resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+
+html {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+
+/*
+ * Sidebar
+ *
+ * Flexible banner for housing site name, intro, and "footer" content. Starts
+ * out above content in mobile and later moves to the side with wider viewports.
+ */
+
+.sidebar {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: rgba(255,255,255,.5);
+  background-color: #202020;
+}
+@media (min-width: 48em) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 18rem;
+    text-align: left;
+  }
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #fff;
+}
+
+/* About section */
+.sidebar-about h1 {
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 3.25rem;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+}
+.sidebar-nav-item {
+  display: block;
+}
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: underline;
+}
+.sidebar-nav-item.active {
+  font-weight: bold;
+}
+
+/* Sticky sidebar
+ *
+ * Add the `sidebar-sticky` class to the sidebar's container to affix it the
+ * contents to the bottom of the sidebar in tablets and up.
+ */
+
+@media (min-width: 48em) {
+  .sidebar-sticky {
+    position: absolute;
+    right:  1rem;
+    bottom: 1rem;
+    left:   1rem;
+  }
+
+  // The #{} stuff is needed because of https://github.com/sass/sass/issues/2378
+  @supports(padding: m#{a}x(0px)) {
+    body:not(.layout-reverse) .sidebar-sticky {
+        // Notch is to left of sidebar; pad appropriately
+        padding-left: m#{a}x(1rem, env(safe-area-inset-left));
+    }
+
+    .layout-reverse .sidebar-sticky {
+        // Support iPhone X rounded corners and notch in landscape
+        // Notch is to right of sidebar; pad appropriately
+        padding-right: m#{a}x(1rem, env(safe-area-inset-right));
+    }
+  }
+}
+
+
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+
+.content {
+  padding-top:    4rem;
+  padding-bottom: 4rem;
+}
+
+@supports(padding: m#{a}x(0px)) {
+  body:not(.layout-reverse) .content {
+      // Notch is to right of content text; pad it appropriately
+      padding-right: m#{a}x(1rem, env(safe-area-inset-right));
+  }
+
+  .layout-reverse .content {
+      // Notch is to left of content text; pad it appropriately
+      padding-left: m#{a}x(1rem, env(safe-area-inset-left));
+  }
+}
+
+
+@media (min-width: 48em) {
+  .content {
+    max-width: 38rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    margin-left: 22rem;
+    margin-right: 4rem;
+  }
+}
+
+
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.sidebar` on the right.
+ */
+
+@media (min-width: 48em) {
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0;
+  }
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .layout-reverse .content {
+    margin-left: 4rem;
+    margin-right: 22rem;
+  }
+}
+
+
+
+/*
+ * Themes
+ *
+ * As of v1.1, Hyde includes optional themes to color the sidebar and links
+ * within blog posts. To use, add the class of your choosing to the `body`.
+ */
+
+/* Base16 (http://chriskempson.github.io/base16/#default) */
+
+/* Red */
+.theme-base-08 .sidebar {
+  background-color: #ac4142;
+}
+.theme-base-08 .content a,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Orange */
+.theme-base-09 .sidebar {
+  background-color: #d28445;
+}
+.theme-base-09 .content a,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Yellow */
+.theme-base-0a .sidebar {
+  background-color: #f4bf75;
+}
+.theme-base-0a .content a,
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Green */
+.theme-base-0b .sidebar {
+  background-color: #90a959;
+}
+.theme-base-0b .content a,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+.theme-base-0c .sidebar {
+  background-color: #75b5aa;
+}
+.theme-base-0c .content a,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Blue */
+.theme-base-0d .sidebar {
+  background-color: #6a9fb5;
+}
+.theme-base-0d .content a,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+.theme-base-0e .sidebar {
+  background-color: #aa759f;
+}
+.theme-base-0e .content a,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+.theme-base-0f .sidebar {
+  background-color: #8f5536;
+}
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
+}
+
+/*
+ * Sidebar Gradient Themes
+ *
+ * Enhanced sidebar with gradient support
+ */
+
+/* Gradient Red */
+.theme-gradient-08 .sidebar {
+  background: linear-gradient(135deg, #ac4142, #d28445);
+}
+.theme-gradient-08 .content a,
+.theme-gradient-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Gradient Orange */
+.theme-gradient-09 .sidebar {
+  background: linear-gradient(135deg, #d28445, #f4bf75);
+}
+.theme-gradient-09 .content a,
+.theme-gradient-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Gradient Yellow */
+.theme-gradient-0a .sidebar {
+  background: linear-gradient(135deg, #f4bf75, #90a959);
+}
+.theme-gradient-0a .content a,
+.theme-gradient-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Gradient Green */
+.theme-gradient-0b .sidebar {
+  background: linear-gradient(135deg, #90a959, #75b5aa);
+}
+.theme-gradient-0b .content a,
+.theme-gradient-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Gradient Cyan */
+.theme-gradient-0c .sidebar {
+  background: linear-gradient(135deg, #75b5aa, #6a9fb5);
+}
+.theme-gradient-0c .content a,
+.theme-gradient-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Gradient Blue */
+.theme-gradient-0d .sidebar {
+  background: linear-gradient(135deg, #6a9fb5, #aa759f);
+}
+.theme-gradient-0d .content a,
+.theme-gradient-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Gradient Magenta */
+.theme-gradient-0e .sidebar {
+  background: linear-gradient(135deg, #aa759f, #8f5536);
+}
+.theme-gradient-0e .content a,
+.theme-gradient-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Gradient Brown */
+.theme-gradient-0f .sidebar {
+  background: linear-gradient(135deg, #8f5536, #ac4142);
+}
+.theme-gradient-0f .content a,
+.theme-gradient-0f .related-posts li a:hover {
+  color: #8f5536;
+}
+
+/* Special Gradient Themes */
+
+/* Ocean Theme */
+.theme-gradient-ocean .sidebar {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.theme-gradient-ocean .content a,
+.theme-gradient-ocean .related-posts li a:hover {
+  color: #667eea;
+}
+
+/* Sunset Theme */
+.theme-gradient-sunset .sidebar {
+  background: linear-gradient(135deg, #ff6b6b, #ffa726);
+}
+.theme-gradient-sunset .content a,
+.theme-gradient-sunset .related-posts li a:hover {
+  color: #ff6b6b;
+}
+
+/* Forest Theme */
+.theme-gradient-forest .sidebar {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.theme-gradient-forest .content a,
+.theme-gradient-forest .related-posts li a:hover {
+  color: #11998e;
+}
+
+/* Purple Theme */
+.theme-gradient-purple .sidebar {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.theme-gradient-purple .content a,
+.theme-gradient-purple .related-posts li a:hover {
+  color: #667eea;
+}
+
+/* Fire Theme */
+.theme-gradient-fire .sidebar {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+.theme-gradient-fire .content a,
+.theme-gradient-fire .related-posts li a:hover {
+  color: #ff416c;
+}
+
+/* Cool Blue Theme */
+.theme-gradient-coolblue .sidebar {
+  background: linear-gradient(135deg, #2196f3, #21cbf3);
+}
+.theme-gradient-coolblue .content a,
+.theme-gradient-coolblue .related-posts li a:hover {
+  color: #2196f3;
+}
+
+/* Dark Theme */
+.theme-gradient-dark .sidebar {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+.theme-gradient-dark .content a,
+.theme-gradient-dark .related-posts li a:hover {
+  color: #3498db;
+}
+
+/*
+ * Educational Enhancements
+ *
+ * Import educational-specific styling enhancements
+ */
+@import "educational";

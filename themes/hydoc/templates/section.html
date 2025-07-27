@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section class="post section-overview">
+  <header class="section-header">
+    <h1 class="post-title section-title">{{ section.title }}</h1>
+    {% if section.description %}
+    <p class="section-description">{{ section.description }}</p>
+    {% endif %}
+  </header>
+  
+  {% if section.content %}
+  <div class="section-intro">
+    {{ section.content | safe }}
+  </div>
+  {% endif %}
+  
+  {% if section.pages %}
+  <div class="section-pages">
+    <h2 class="section-pages-title">本章節內容</h2>
+    <div class="learning-path">
+      {% for page in section.pages %}
+      <article class="learning-item">
+        <div class="item-number">{{ loop.index }}</div>
+        <div class="item-content">
+          <h3 class="item-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </h3>
+          {% if page.description %}
+          <p class="item-description">{{ page.description }}</p>
+          {% endif %}
+          {% if page.extra.difficulty %}
+          <span class="difficulty-badge difficulty-{{ page.extra.difficulty }}">
+            {{ page.extra.difficulty | title }}
+          </span>
+          {% endif %}
+          {% if page.extra.estimated_time %}
+          <span class="time-estimate">{{ page.extra.estimated_time }}</span>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if section.subsections %}
+  <div class="subsections">
+    <h2>子章節</h2>
+    <div class="subsection-grid">
+      {% for subsection in section.subsections %}
+      <div class="subsection-card">
+        <h3><a href="{{ subsection.permalink }}">{{ subsection.title }}</a></h3>
+        {% if subsection.description %}
+        <p>{{ subsection.description }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endblock content %}

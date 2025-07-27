@@ -1,5 +1,5 @@
 # Zola 配置文件
-base_url = "https://scss-guide.example.com"
+base_url = "https://slime21023.github.io/scss-guide"
 title = "SCSS 使用指南"
 description = "詳盡的 SCSS 學習指南，從基礎到進階的完整教程"
 theme = "hydoc"
@@ -35,7 +35,7 @@ smart_punctuation = true
 [extra]
 # 網站資訊
 author = "SCSS Guide Team"
-github_url = "https://github.com/example/scss-guide"
+github_url = "https://github.com/slime21023/scss-guide"
 feed_filename = "atom.xml"
 
 # Hyde 主題設定
